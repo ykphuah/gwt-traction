@@ -116,7 +116,7 @@ public abstract class UTCTimeBoxImplShared extends Composite implements UTCTimeB
             // midnight GMT
             Date date = new Date(0);
             // offset by timezone and value
-            date.setTime(UTCDateBox.timezoneOffsetMillis(date) + value.longValue());
+            date.setTime(UTCDateBox.timezoneOffsetMillis(new Date()) + value.longValue());
             // format it
             return fmt.format(date);
         }
