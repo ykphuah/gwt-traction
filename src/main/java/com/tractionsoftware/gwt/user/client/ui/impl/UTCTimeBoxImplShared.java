@@ -158,7 +158,7 @@ public abstract class UTCTimeBoxImplShared extends Composite implements UTCTimeB
     protected static final Long parseUsingFormat(String text, DateTimeFormat fmt) {
         Date date = new Date(0);
         int num = fmt.parse(text, 0, date);
-        return (num != 0) ? new Long(normalizeInLocalRange(date.getTime() - UTCDateBox.timezoneOffsetMillis(date))) : null;
+        return (num != 0) ? new Long(normalizeInLocalRange(date.getTime() - UTCDateBox.timezoneOffsetMillis(new Date()))) : null;
     }
     
     protected static final Long parseUsingFallbacks(String text, DateTimeFormat primaryTimeFormat) {
